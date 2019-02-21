@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-xl-6 col-lg-6 col-lg-offset-3 col-xl-offset-3">
+        <!--<ul class="nav navbar-nav">-->
+          <!--<li><a href="#"><i class="glyphicon glyphicon-sort"></i> </a></li>-->
+          <!--<li class="active"><a href="#"><i class="glyphicon glyphicon-search"></i> </a></li>-->
+        <!--</ul>-->
+        <div class="navbar-header navbar-right">
+          <ul class="nav navbar-nav">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+              <a [routerLink]="['/']"><span class="glyphicon glyphicon-search" style="font-size: large"></span> </a></li>
+            <li routerLinkActive="active"> <a [routerLink]="['menu/add-achi']"><span class="glyphicon glyphicon-th" style="font-size: large"></span> </a></li>
+          </ul>
+        </div>
+
+    <form class="navbar-form form-group-lg" #form="ngForm" *ngIf="!search.isSearchDisabled">
+      <div class="form-group">
+
+      <div class="input-group">
+        <input [disabled]="search.isSearchDisabled" autocomplete="off" placeholder="type keywords here" type="text" class="form-control"
+               (keyup)="onKeyup($event.target.value)" [(ngModel)]="search.term" name="q" #q>
+
+        <div class="input-group-btn">
+
+          <select [disabled]="search.isSearchDisabled" class="form-control btn btn-default" [(ngModel)]="search.searchField"
+                  (change)="onChange()" name="selection" #selection>
+            <option style="font-size: medium; background-color: white" value="hospital_code">Hospital Code</option>
+            <option style="font-size: medium; background-color: white" value="description">Hospital Description</option>
+            <option style="font-size: medium; background-color: white" value="achi_code">Achi Code</option>
+            <option style="font-size: medium; background-color: white" value="achi_description">Achi Description</option>
+          </select>
+        </div>
+        <!--<div class="input-group-addon addon-right">-->
+          <!--<i style="color: #E8E8E8" class="glyphicon glyphicon-search"></i>-->
+        <!--</div>-->
+        <!--<div class="input-group-addon addon-right"></div>-->
+      </div>
+      </div>
+    </form>
+    </div>
+    </div>
+  </div>
+</nav>
+

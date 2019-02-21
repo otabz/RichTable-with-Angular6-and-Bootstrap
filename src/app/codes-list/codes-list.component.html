@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xl-6 col-lg-6 column-in-center">
+    <div *ngIf="codes.length !== 0; else nodata" class="panel panel-default">
+      <table class="table table-fixed">
+        <thead>
+        <tr>
+          <th class="col-xs-6 col-xl-3">{{(search.searchField == 'hospital_code' ||
+            search.searchField == 'description') ? 'Hospital Code' : 'Achi Code'}}</th>
+          <th class="col-xs-6 col-xl-3">{{(search.searchField == 'hospital_code' ||
+            search.searchField == 'description') ? 'Achi Code' : 'Hospital Code'}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="clearfix" *ngFor="let code of codes, let i=index">
+         <td class="col-xs-6 col-xl-3">
+           <h4 style="margin-bottom: 0px">
+             <a (click)="onClick(code.icd10, 'achi_code')" *ngIf="search.searchField === 'achi_code' || search.searchField === 'achi_description';
+              else byHospitalCode" style="color: #404040; cursor: pointer">
+             {{(search.searchField === 'hospital_code' ||
+             search.searchField === 'description') ? code.code : code.icd10}}
+           </a>
+             <ng-template #byHospitalCode><a style="color: #404040; cursor: pointer" (click)="onClick(code.code, 'hospital_code')">{{(search.searchField === 'hospital_code' ||
+             search.searchField === 'description') ? code.code : code.icd10}}</a></ng-template></h4>
+           <p>
+             <label class="label-status" *ngIf="(search.searchField === 'achi_code') && code.type === 'add'">
+               Added
+             </label>
+             {{(search.searchField === 'hospital_code' ||
+             search.searchField === 'description') ? code.desc : code.adesc}}
+           </p>
+         </td>
+          <td class="col-xs-6 col-xl-3" *ngIf="(search.searchField === 'hospital_code'
+          || search.searchField === 'description'); else nodes">
+            <h4 style="margin-bottom: 0px"><a (click)="onClick(code.icd10, 'achi_code')" style="color: #404040; cursor: pointer">{{(search.searchField === 'hospital_code' ||
+              search.searchField === 'description') ? code.icd10 : code.code}}
+            </a></h4>
+            <p>
+              <label class="label-status" *ngIf="(search.searchField === 'hospital_code' ||
+               search.searchField === 'description') && code.type === 'add'">
+                Added
+              </label>
+              {{(search.searchField == 'hospital_code' ||
+              search.searchField == 'description') ? code.adesc : code.desc}}
+            </p>
+          </td>
+          <ng-template #nodes>
+            <td class="col-xs-6 col-xl-3">
+            <app-nodes [searchField]="search.searchField" [newCodeAdded]="newCodeAdded" [code]="code" [showAddBtnClicked]="showAddBtnClicked" [formIndex]="'addForm'+i"></app-nodes>
+            </td>
+          </ng-template>
+          <app-code-map [newCodeAdded]="newCodeAdded"  [icd10]="code.icd10" [adesc]="code.adesc" [type]="code.type" *ngIf="search.searchField === 'achi_code' && showAddForm === 'addForm'+i"></app-code-map>
+        </tr>
+        </tbody>
+      </table>
+      <div class="panel-footer clearfix" style="border-bottom: 0px">
+        <h4 class="panel-title pull-left">
+          <button style="cursor: default; padding: 0px" type="button" class="btn btn-default btn-circle btn-lg">
+            {{codes.length}}</button>
+          <i [ngClass]="search.searchType" style="color: #D8D8D8; padding: 10px"></i>
+          <span>{{(search.term === undefined || search.term.trim() === '' ) ? '' : '| '.concat(search.term)}}</span>
+        </h4>
+        <div class="btn-group pull-right">
+          <button [disabled]="!isMore" type="button" class="btn btn-default btn-circle btn-lg"
+                  style="background-color: dodgerblue; padding: 0px; color: white; border-color: transparent" (click)="onMore()">
+            <i style="padding-top: 4px" class="glyphicon glyphicon-menu-down"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+      <ng-template #nodata>
+        <div style="text-align: center; padding-top: 20vh">
+          <span [ngClass]="infoIcon" style="font-size: 10vh; color: #F2F4F4"></span>
+          <h3 style="color: lightgrey">{{message}}</h3>
+        </div>
+        <div style="color: grey" style="padding-top: 10vh">
+          <h5>Suggestions: </h5>
+          <ul>
+            <li>Keyword length must be more than 2.</li>
+            <li>Try different keyword.</li>
+            <li>Select different option.</li>
+          </ul>
+        </div>
+      </ng-template>
+  </div>
+  </div>
+</div>
+
+

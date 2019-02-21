@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+  <div class="help-block" style="color: white; background-color: red; padding-left: 10px; margin-top: 0px"
+       *ngIf="error.status">{{error.message}}</div>
+  <div class="help-block" style="color: white; background-color: #5db85d; padding-left: 10px; margin-top: 0px"
+       *appGrowl="!error.status && error.message !== ''">{{error.message}}</div>
+    <div class="panel-body">
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <div formGroupName="achi">
+        <label for="code">Code</label>
+        <input (focus)="onFocus($event.target.value)" autocomplete="off" (keyup)="onKeyup($event.target.value)" type="text" placeholder="Type code" class="form-control" id="code" required maxlength="20" formControlName="code">
+        <label for="desc">Description</label>
+        <textarea placeholder="Type description" class="form-control" id="desc" required formControlName="desc"></textarea>
+        </div>
+        <div class="col-xl-4 col-xs-7">
+          <button (click)="onAddMore()" *ngIf="codes.length > 0" type="button" class="btn btn-default btn-block" style="border-radius: 0px">Add more</button>
+        </div>
+        <div class="col-xl-2 col-xs-5">
+          <button *ngIf="codes.length > 0" type="submit" class="btn btn-success btn-block" style="border-radius: 0px">Save</button>
+        </div>
+<div class="col-xl-6 col-xs-12">
+        <div formGroupName="hospital" *ngIf="((form.get('achi').valid || form.get('achi').disabled)
+        && !this.error.status && addCodeNeedToShow)"
+             class="panel panel-default" style="margin-top: 20px">
+     <div class="panel-heading" style="border-radius: 0px; background-color: #E8E8E8">
+  <div class="panel-title">
+    <!--<button class="btn btn-default btn-circle btn-sm" style="margin-right: 10px"><i class="glyphicon glyphicon-remove"></i> </button>-->
+    <span>Map new <b>Hospital code</b> to: <i class="badge">{{form.get('achi').get('code').value}}</i></span>
+     </div>
+     </div><div class="help-block" style="color: white; background-color: red; padding-left: 10px; margin-top: 0px"
+               *ngIf="cerror.status">{{cerror.message}}</div>
+     <div class="panel-body" style="background-color: white; border: 1px; border-color: black">
+
+         <label for="hcode">Code</label>
+         <input #c autocomplete="off" (keyup)="onCKeyup(c.value)" type="text" class="form-control" id="hcode" maxlength="20" required formControlName="code">
+         <label for="hdesc">Description</label>
+         <textarea (focus)="onFocusDesc()" class="form-control" id="hdesc" required formControlName="desc"></textarea>
+         <button (click)="onAddCode()" *ngIf="form.get('hospital').valid && !this.cerror.status"
+                 type="button" class="btn btn-success btn-block" style="border-radius: 0px">Add</button>
+
+     </div>
+        </div>
+</div>
+      </form>
+      <div class="col-xl-6 col-xs-12">
+        <div *ngIf="codes.length > 0" style="margin-top: 10px" class="panel panel-default">
+          <div class="panel-heading">
+            Following Hospital codes will be mapped
+          </div>
+          <div class="panel-body" style="margin: 0 0 0 10px; padding: 0" *ngFor="let code of codes; let i = index">
+            <h4>{{code.code}}</h4>
+            <p>{{code.desc}}</p>
+          </div>
+        </div>
+   </div>
+    </div>
+ </div>

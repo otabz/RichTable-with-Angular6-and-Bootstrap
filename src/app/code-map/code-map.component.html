@@ -1,0 +1,68 @@
+<!--<div class="container">-->
+  <!--<div class="row" style="margin: 0px; padding: 0px; background-color: dodgerblue">-->
+    <!--<div class="col-xs-12 col-xl-6 col-lg-6" style="margin: 0px; padding: 0px">-->
+      <!--<div class="panel panel-default" style="border: 0px; margin: 0px; padding: 0px">-->
+        <!--<div class="panel-body" style="margin:0px; background-color: dodgerblue; margin-bottom: 0px; padding-bottom: 2px; color: white">-->
+          <!--<div class="col-xs-5 col-xl-2 col-lg-2" style="margin: 0px; padding: 0px">-->
+            <!--<h5 style="margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 4px;-->
+             <!--padding: 0px">Achi code</h5>-->
+          <!--<h2 style="margin: 0px; padding: 0px">-->
+          <!--{{code}}-->
+          <!--</h2>-->
+            <!--<label class="label-status">Added</label>-->
+          <!--</div>-->
+          <!--<div class="col-xs-7 col-xl-4 col-lg-4" style="margin: 0px; padding: 0px">-->
+            <!--<h5 style="margin-top: 0px; margin-right: 0px; margin-left: 0px; margin-bottom: 8px;-->
+             <!--padding: 0px">Description</h5>-->
+          <!--<h4 style="color: white; margin: 0px; padding: 0px">{{desc}}</h4>-->
+          <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-xs-12 col-xl-6 col-lg-6 col-lg-offset-3 col-xl-offset-3">-->
+      <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading clearfix" style="border-radius: 0px; background-color: dodgerblue; margin: 0px; padding: 5px 5px 5px 5px; border-bottom: 0px">-->
+          <!--<h4 class="panel-title pull-left">-->
+            <!--<button type="button" class="btn btn-default"-->
+                    <!--style="border-color: transparent; background-color: transparent; color: white" [routerLink]="['/']">-->
+              <!--<i style="padding: 2px" class="glyphicon glyphicon-arrow-left"></i>-->
+            <!--</button>-->
+          <!--</h4>-->
+        <!--</div>-->
+        <!--<div class="panel-heading clearfix" style="color: white; border-radius: 0px; background-color: dodgerblue; border-bottom: 0px; margin: 0px; padding: 5px 0px 5px 10px">-->
+          <!--<div style="margin: 0px; padding: 0px">-->
+          <!--<h2 style="margin: 0px; padding: 0px">-->
+          <!--{{code}}-->
+          <!--</h2>-->
+          <!--<label class="label-status" style="margin-right: 5px">Added</label>-->
+            <!--<span>{{desc}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <div class="col-xs-12 col-xl-12 col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading" style="border-bottom: 0px; border-radius: 0px">
+        <h4 class="panel-title" style="text-align: center">Map new Hospital Code</h4>
+        </div>
+        <div class="help-block" style="color: white; background-color: red; padding: 5px" *ngIf="error.status">{{error.message}}</div>
+        <div class="help-block" style="color: white; background-color: #5db85d; padding: 5px" *appGrowl="!error.status && error.message !== ''">{{error.message}}</div>
+        <div class="panel-body">
+          <form (submit)="onSubmit()" [formGroup]="form">
+          <label for="code">Code</label>
+          <input (focus)="onFocus($event.target.value)" autocomplete="off" (keyup)="onKeyup($event.target.value)" placeholder="Type code" type="text" class="form-control" id="code" formControlName="code" #c>
+            <label for="desc">Description</label>
+            <textarea placeholder="Type description" class="form-control" id="desc" required formControlName="desc"></textarea>
+            <button *ngIf="form.valid && !this.error.status" type="submit" class="btn btn-success btn-block" style="border-radius: 0px">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!--</div>-->
+<!--</div>-->

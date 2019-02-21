@@ -1,0 +1,89 @@
+
+/*.form-control:focus {*/
+  /*border-color: transparent;*/
+  /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0), 0 0 0px rgba(0, 0, 0, 0);*/
+/*}*/
+
+
+/*option {*/
+  /*font-size: 15px;*/
+  /*!*color: #404040;*!*/
+  /*!*background-color: white;*!*/
+/*}*/
+
+/*select {*/
+  /*height: 42px;*/
+  /*font-size: medium;*/
+  /*font-weight: bold;*/
+  /*!*background-color: dodgerblue;*!*/
+  /*!*color: white;*!*/
+  /*!*padding: 0px;*!*/
+  /*border: 0px;*/
+  /*border-radius: 0px;*/
+  /*text-align-last:center;*/
+  /*box-shadow: none;*/
+  /*cursor: pointer;*/
+/*}*/
+
+/*input {*/
+  /*border: 0px;*/
+  /*border-radius: 0px;*/
+  /*font-size: large;*/
+  /*height: 42px;*/
+  /*outline: none;*/
+  /*box-shadow: none;*/
+/*}*/
+
+.navbar-default {
+  border-color: transparent;
+}
+
+/*for shadow*/
+/*.input-group {*/
+  /*width: 100%;*/
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+/*}*/
+
+/*input[type="text"],*/
+/*select.form-control {*/
+  /*background: white;*/
+  /*border: none;*/
+  /*border-bottom: 0px solid #000000;*/
+  /*-webkit-box-shadow: none;*/
+  /*box-shadow: none;*/
+  /*border-radius: 0;*/
+  /*font-size: medium;*/
+  /*height: 42px;*/
+/*}*/
+
+select.form-control {
+  min-width: 120px;
+  font-size: small;
+  font-weight: bold;
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*.navbar-nav > li {*/
+  /*!*margin-top: 8px;*!*/
+  /*line-height: 100%;*/
+/*}*/
+
+.navbar-nav li a {
+  margin-top: 0px;
+  padding-top: 4vh;
+}
+
+input[type="text"] {
+  border-radius: 0;
+}
+
+
+/*.container {*/
+  /*height: 8vh;*/
+/*}*/
+

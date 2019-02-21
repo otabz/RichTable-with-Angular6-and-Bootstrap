@@ -1,0 +1,50 @@
+.panel-default {
+  /*border-radius: 0px;*/
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #fdfdfd;
+  border-radius: 0px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  padding: 0px 0px;
+  font-size: 11px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+input[type="text"],
+select.form-control,
+textarea.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus,
+select.form-control:focus,
+textarea.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type="text"],
+textarea.form-control {
+  margin-bottom: 15px;
+  margin-top: 0;
+  padding-top: 0;
+}

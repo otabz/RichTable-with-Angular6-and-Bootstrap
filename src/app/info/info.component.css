@@ -1,0 +1,10 @@
+.column-in-center{
+  float: none;
+  margin: 0 auto;
+}
+
+h4 {
+  text-align: center;
+  color: #E8E8E8;
+}
+

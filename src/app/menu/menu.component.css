@@ -1,0 +1,21 @@
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+  background-color: #E8E8E8;
+  border-radius: 0;
+}
+
+.label-status {
+  margin-bottom: 0px;
+  margin-right: 1px;
+  border-radius:0px;
+  padding: 1px;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-weight: bold;
+  font-size: x-small;
+  background-color: #E8E8E8;
+  color: #404040;
+}
+
+h4 {
+  color: #404040;
+}

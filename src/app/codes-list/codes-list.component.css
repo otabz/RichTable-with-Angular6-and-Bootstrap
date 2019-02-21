@@ -1,0 +1,164 @@
+.row-header {
+  font-size: 15px;
+  color: #404040;
+}
+
+.row-md-header {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.row-small-text {
+  font-size: 10px;
+  color: #808080;
+}
+
+.column-in-center{
+  float: none;
+  margin: 0 auto;
+}
+
+.label-default {
+  background-color: #E8E8E8;
+  color: black;
+}
+
+
+.btn-more {
+  margin-top: 10px;
+  border-radius: 50px;
+  width: 50%;
+}
+.table-fixed thead {
+  width: 100%;
+}
+.table-fixed tbody {
+  /*height: 66vh;*/
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+
+.table-fixed th {
+  font-size: 15px;
+  background-color: #f5f5f5;
+
+}
+
+.table-fixed td.fit {
+  white-space: pre;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+.btn-circle.btn-lg:focus {
+  outline: none;
+  box-shadow: none;
+}
+.container {
+  /*height: 88vh;*/
+  /*width: 98%;*/
+  /*overflow: auto;*/
+}
+.panel-default {
+  border-radius: 0px;
+}
+
+.label-status {
+  margin-bottom: 0px;
+  margin-right: 1px;
+  border-radius:0px;
+  padding: 1px;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-weight: bold;
+  font-size: x-small;
+  background-color: #E8E8E8;
+  color: #404040;
+}
+
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-xs {
+  width: 25px;
+  height: 25px;
+  padding: 4px 0px;
+  font-size: 13px;
+  line-height: 1.33;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+

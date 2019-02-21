@@ -1,0 +1,98 @@
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.btn-circle.btn-xs {
+  width: 25px;
+  height: 25px;
+  padding: 4px 0px;
+  font-size: 13px;
+  line-height: 1.33;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.btn-circle.btn-xs-add {
+  width: 25px;
+  height: 25px;
+  padding: 5px 0px;
+  font-size: 10px;
+  line-height: 1.33;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+/*li { display: inline; }*/
+
+.container {
+  max-width: 19em;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+
+table > tbody > tr > td {
+  margin: 0px;
+  padding: 10px;
+}
+
+th, td {
+  border: 0.1px solid #D8D8D8;
+}
+
+th, td {
+  padding: .5em 1em;
+}
+
+table {
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+/*div#box{*/
+  /*max-height:7em;*/
+  /*max-width:19em;*/
+  /*overflow:hidden;*/
+  /*border:1px solid black;*/
+  /*padding: 10px;*/
+/*}*/
+
+/*div#content{*/
+  /*height:10em;*/
+  /*max-width:19em;*/
+  /*white-space: nowrap;*/
+  /*!**/
+   /** Uncomment to see scrollbar*/
+  /*width:300px;*/
+  /**!*/
+  /*overflow:auto;*/
+/*}*/
+
+.panel-default, .panel-body, .list-group-item, .list-group, .list-group-item-heading {
+  margin: 0px;
+  padding: 0px;
+}
+.panel-default {
+  max-height: 5em;
+  overflow: hidden;
+}
+
+.list-group {
+  background-color: white;
+}
+
+.btn-sm {
+  margin-top: 10px;
+}
+
+#btnAdd {
+  font-size: xx-small;
+}
+
+
